@@ -8,7 +8,7 @@
       <th>Image</th>
       <th>Name</th>
       <th>Description</th>
-      <th>Price</th>
+      <th>User</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -19,10 +19,12 @@
         <td><%= image_tag cake.image.url(:medium) %></td>
         <td><%= cake.name %></td>
         <td><%= cake.description %></td>
-        <td><%= cake.price %></td>
-        <td><%= link_to 'Show', cake %></td>
+        <td><%= cake.user.email %></td>
+        <td><a><%= link_to '**Show Product**', cake %></a></td>
+          <% if cake.user == current_user %>
         <td><%= link_to 'Edit', edit_cake_path(cake) %></td>
         <td><%= link_to 'Destroy', cake, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
       </tr>
     <% end %>
   </tbody>
