@@ -1,0 +1,21 @@
+<p id="notice"><%= notice %></p>
+
+<%= image_tag @cake.image.url(:medium) %>
+
+<p>
+  <strong>Name:</strong>
+  <%= @cake.name %>
+</p>
+
+<p>
+  <strong>Description:</strong>
+  <%= @cake.description %>
+</p>
+
+<p>
+  <strong>Price:</strong>
+  <%= @cake.price %>
+</p>
+
+<%= link_to 'Edit', edit_cake_path(@cake) %> |
+<%= link_to 'Back', cakes_path %>
